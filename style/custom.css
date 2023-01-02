@@ -1,0 +1,70 @@
+<style>
+	.corollary {  
+		background-color: yellow;
+		color: blue;
+		border-color: #dFb5b4;
+		border-left: 5px solid #dfb5b4;
+		padding: 0.5em;
+		font-size: 120%;
+		font: bold:
+	}
+	.overview {
+	  	font-size: 150%;
+		font-weight: 700;
+	}
+	.theorem {  
+		background-color: yellow;
+		color: blue;
+		border-color: #dFb5b4;
+		border-left: 5px solid #dfb5b4;
+		padding: 0.5em;
+		font-size: 120%;
+		font: bold;
+	}
+	.thbody {  
+		background-color: yellow;
+		color: blue;
+		border-color: #dFb5b4;
+		border-left: 5px solid #dfb5b4;
+		padding: 0.5em;
+		font-size: 100%;
+	}
+	.proof {  
+		color: black;
+		border-color: #dFb5b4;
+		border-left: 5px solid #dfb5b4;
+		padding: 0.5em;
+		font-size: 100%;
+	}
+	.def {  
+		color: black;
+		border-color: #bfff00;
+		border-left: 5px solid #bfff00;
+		padding: 0.5em;
+		font-size: 100%;
+	}
+	.markword2line {  
+		background-color: DarkGoldenRod;
+		color: white;
+		border-color: #dFb5b4;
+		border-left: 5px solid #FFA500;
+		padding: 0.5em;
+		font-size: 120%;
+		font: bold;
+	}
+	.bluehighlight {  
+		background-color: yellow;
+		color: blue;
+		font: bold;
+	}
+	.boxfinal {
+  		display: flex;
+  		align-items: flex-start;
+  		justify-content: space-between;
+		width: 90%;
+	}
+
+	.boxfinal :first-child {
+    		align-self: center;
+	}
+</style>

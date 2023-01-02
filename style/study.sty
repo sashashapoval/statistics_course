@@ -1,0 +1,68 @@
+\usepackage{listings}
+\usepackage{framed}
+\usepackage{mdframed}
+
+\newcounter{Problem}
+\newcounter{Question}
+
+\renewenvironment{leftbar}[1][\hsize]
+{% 
+\def\FrameCommand 
+{%
+{\hspace{-7pt} \color{black} \vrule width 2pt}%
+\hspace{0pt}%must no space.
+\fboxsep=\FrameSep\colorbox{white}%
+}%
+\MakeFramed{\hsize#1\advance\hsize-\width\FrameRestore}%
+}
+{\endMakeFramed}
+\setlength{\FrameSep}{5pt}
+
+\newmdenv[topline=false, leftline=false, bottomline=false,%
+  linewidth=2pt, innerleftmargin=0pt, rightmargin=-4pt,%
+  innerrightmargin=5pt, skipabove=8pt, skipbelow=8pt]{rightbar}
+
+\newmdenv[topline=false, rightline=false, bottomline=false,%
+  linewidth=2pt, innerrightmargin=0pt, leftmargin=-4pt,%
+  innerleftmargin=5pt, skipabove=8pt, skipbelow=8pt]{mdleftbar}
+
+\definecolor{verbgray}{gray}{0.9}
+\lstnewenvironment{code}{%
+  \lstset{backgroundcolor=\color{verbgray},
+  frame=single,
+  framerule=0pt,
+  basicstyle=\ttfamily,
+  columns=fullflexible}}{}
+%\definecolor{shadecolor}{rgb}{.9, .9, .9}
+
+\newcommand{\verbcode}[1]{\colorbox{verbgray}{\texttt{#1}}}
+
+%Style of problems
+ \newcommand{\vspaceproblem}{\vspace{5pt plus 1pt minus 1pt}}
+ \newcommand{\PR}{\par\vspaceproblem\noindent%
+ \refstepcounter{Problem}{\bf Q\theProblem. }}
+ \newcommand{\PRstar}{\par\vspaceproblem\noindent%
+ \refstepcounter{Problem}{\bf Q\theProblem*. }}
+ \newcommand{\PRstarstar}{\par\vspaceproblem\noindent%
+ \refstepcounter{Problem}{\bf Q\theProblem**. }}
+ \newcommand{\PRspecial}{\par\vspaceproblem\noindent%
+ \refstepcounter{Problem}{\bf Q\theProblem\textsurd. }}
+%
+%Style of questions
+ \newcommand{\vspacequestion}{\vspaceproblem}
+ \newcommand{\Q}{\par\vspacequestion\noindent%
+ \refstepcounter{Question}{\bf \theQuestion. }}
+%
+%Style of solutions
+ \newcommand{\vspacesol}{\vspaceproblem}
+ \newcommand{\Sol}{\par\vspacesol\noindent}
+ \newcommand{\sol}[1]{\Sol{\bf\ref{#1}.}}
+
+\newcommand{\Prob}{\mathsf{P}}
+\newcommand{\Exp}{\mathbf{E}}
+\newcommand{\Cov}{\mathbf{Cov}}
+\newcommand{\Var}{\mathbf{Var}}
+\newcommand{\scalar}[2]{\mathbf{\langle} #1, #2 \mathbf{\rangle}}
+%\newcommand{\scalar}[2]{\mathbf{(} #1, #2 \mathbf{)}}
+\newcommand{\emphyellow}[2][yellow]{\colorbox{#1}{\emph{#2}}}
+
