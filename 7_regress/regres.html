@@ -13144,7 +13144,7 @@ $( document ).ready(function(){
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="boxfinal">
-    <span style="font-size:80%;"> <a href="../6_estimates/estimates.html">Previous:</a> Bootstrap</span>
+    <span style="font-size:80%;"> <a href="../6_estimates/estimates.html">Previous:</a> Estimates</span>
     <span style="font-size:80%;"> <a href="#">Regression</a></span>
     <span style="font-size:80%;right-margin:20pt;"> <a href="#">Next:</a> Conclusion</span>
 </div>
@@ -13215,84 +13215,87 @@ Combining \eqref{e:zeromean} and \eqref{e:meanindependenceonx}, we end up with a
 <li>In real problems, $u$ is typically unobserved. </li>
 <li>The absence of the correlation is always something to discuss</li>
 </ul>
-<h3 id="Example-(model):">Example (model):<a class="anchor-link" href="#Example-(model):">&#182;</a></h3><p>The score at the final exam linearly depends on the classes attended and unobserved factors (such as ability):
+<h3 id="Example-(model):">Example (model):<a class="anchor-link" href="#Example-(model):">&#182;</a></h3><p>The score at the final exam linearly depends on the classes attended and unobserved factors (such as ability):</p>
 $$
     score = \beta_0 + \beta_1 attend + u.
-$$
-Discuss whether assumption \eqref{e:zerocondmean} holds.</p>
+$$<p>Discuss whether assumption \eqref{e:zerocondmean} holds.</p>
 <h3 id="Linear-dependence-of-the-expected-mean-of-$y$-on-$x$">Linear dependence of the expected mean of $y$ on $x$<a class="anchor-link" href="#Linear-dependence-of-the-expected-mean-of-$y$-on-$x$">&#182;</a></h3><p>Takig the model equation \eqref{e:regression} and using assumption \eqref{e:zerocondmean}, compute the conditional
-expectation of $y$ given $x$:
+expectation of $y$ given $x$:</p>
 \begin{equation}
     \mathbf{E}(y | x) = 
     \beta_0 + \beta_1 x.
-\end{equation}
-For any value of $x$, there is the population of the dependent variable $y | x$. The mean of the population belongs to the line 
+\end{equation}<p>For any value of $x$, there is the population of the dependent variable $y | x$. The mean of the population belongs to the line 
 $y' = \beta_0 + \beta_1 x$.</p>
 <ul>
 <li>$y$ consists of systematic part $\mathbf{E}(y | x)$ </li>
 <li>and unsystematic part $u$</li>
 </ul>
 <h3 id="Derivation-of-$\beta_0$-and-$\beta_1$">Derivation of $\beta_0$ and $\beta_1$<a class="anchor-link" href="#Derivation-of-$\beta_0$-and-$\beta_1$">&#182;</a></h3><ul>
-<li>independence of $u$ and $x$ in formal terms: transformation of \eqref{e:zerocondmean}:
+<li>independence of $u$ and $x$ in formal terms: transformation of \eqref{e:zerocondmean}:</li>
+</ul>
 \begin{multline}
- \mathbf{E}(ux) = 
- \sum_{i,j} u_i x_j \mathbf{P}\{u = u_i, x = x_j\} =
- \\
- \sum_{i,j} u_i x_j \mathbf{P}\{u = u_i | x = x_j\} \mathbf{P}\{x = x_j\} =
- \\
- \sum_{j} x_j \mathbf{P}\{x = x_j\} \sum_i u_i \mathbf{P}\{u = u_i | x = x_j\} =
- \\
- \sum_{j} x_j \mathbf{P}\{x = x_j\} \mathbf{E}\{u | x = x_j\} =
- \\
- \big[\text{the expectation of $u$ is independent of $x_j$}\big] =
- \mathbf{E}x \mathbf{E}u = 0
-\end{multline}</li>
+    \mathbf{E}(ux) = 
+    \sum_{i,j} u_i x_j \mathbf{P}\{u = u_i, x = x_j\} =
+    \\
+    \sum_{i,j} u_i x_j \mathbf{P}\{u = u_i | x = x_j\} \mathbf{P}\{x = x_j\} =
+    \\
+    \sum_{j} x_j \mathbf{P}\{x = x_j\} \sum_i u_i \mathbf{P}\{u = u_i | x = x_j\} =
+    \\
+    \sum_{j} x_j \mathbf{P}\{x = x_j\} \mathbf{E}\{u | x = x_j\} =
+    \\
+    \big[\text{the expectation of $u$ is independent of $x_j$}\big] =
+    \mathbf{E}x \mathbf{E}u = 0
+\end{multline}<ul>
 <li>sample $(x_i, y_i)$, $i = 1, 2, \ldots, n$</li>
-<li>compute the covariance of the both hand side of the regression
+<li>compute the covariance of the both hand side of the regression</li>
+</ul>
 $$
- y = \beta_0 + \beta_1 x + u
+    y = \beta_0 + \beta_1 x + u
+$$<p>with $x$:
 $$
-with $x$:
-$$
- \mathbf{Cov}(x,y) = \beta_1 \mathbf{Cov}(x,x),
+    \mathbf{Cov}(x,y) = \beta_1 \mathbf{Cov}(x,x),
 $$
 $$
- \rho_{xy}\sigma_x\sigma_y = \beta_1 \sigma_x^2,
+    \rho_{xy}\sigma_x\sigma_y = \beta_1 \sigma_x^2,
 $$
 where $\rho_{xy}$ is the coefficient of the correlation between
 $x$ and $y$, $\sigma_x$ and $\sigma_y$ are the standard deviations.
 Then
 \begin{equation}
- \beta_1 = \rho_{xy}\cdot\frac{\sigma_y}{\sigma_x}.
- \label{e:beta1p}
-\end{equation}</li>
-<li>substitute sample for random variable characteristics in assumptions
+    \beta_1 = \rho_{xy}\cdot\frac{\sigma_y}{\sigma_x}.
+    \label{e:beta1p}
+\end{equation}</p>
+<ul>
+<li><p>substitute sample for random variable characteristics in assumptions
 \begin{equation}
    \hat{\beta}_1 =
   \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}
   {\sum_{i=1}^n (x_i - \bar{x})^2}
   \label{e:beta1mod}
-\end{equation}</li>
-<li>Another possibility to use sample characteristics: substitution into the assumptions from the very beginning
+\end{equation}</p>
+</li>
+<li><p>Another possibility to use sample characteristics: substitution into the assumptions from the very beginning</p>
+</li>
+</ul>
 \begin{gather}
 \mathbf{E}u = 0
 \\
 \mathbf{E}(xu) = 0
-\end{gather}
-or
+\end{gather}<p>or
 \begin{gather}
 \mathbf{E}(y - \beta_0 - \beta_1 x) = 0
 \\
 \mathbf{E}(x(y - \beta_0 - \beta_1 x)) = 0
-\end{gather}</li>
+\end{gather}</p>
+<ul>
 <li>after the substitution:
 \begin{gather}
 \frac{1}{n}\sum_{i=1}^n (y_i - \beta_0 - \beta_1 x_i) = 0
 \\
 \frac{1}{n}\sum_{i=1}^n x_i(y_i - \beta_0 - \beta_1 x_i) = 0
 \end{gather}</li>
-<li>The solution:
-\begin{gather}
+<li><p>The solution:</p>
+<p>\begin{gather}
   \hat{\beta}_1 =
   \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}
   {\sum_{i=1}^n (x_i - \bar{x})^2}
@@ -13301,15 +13304,16 @@ or
   \hat{\beta}_0 = 
   \bar{y} - \hat{\beta}_1 \bar{x}
   \label{e:beta0}
-\end{gather}
-Alternatively, one may write
-\begin{equation}
-  \hat{\beta}_1 = \hat{\rho}_{xy} \cdot 
-  \left(\frac{\hat{\sigma}_y}{\hat{\sigma}_x}\right)
-  \label{e:beta1mod2}
-\end{equation}
-You see that \eqref{e:beta1mod2} coincides with \eqref{e:beta1mod}.</li>
+\end{gather}</p>
+</li>
 </ul>
+<p>Alternatively, one may write
+ \begin{equation}
+     \hat{\beta}_1 = \hat{\rho}_{xy} \cdot 
+     \left(\frac{\hat{\sigma}_y}{\hat{\sigma}_x}\right)
+     \label{e:beta1mod2}
+ \end{equation}</p>
+<p>You see that \eqref{e:beta1mod2} coincides with \eqref{e:beta1mod}.</p>
 
 </div>
 </div>
@@ -13800,7 +13804,7 @@ significance level =  0.01 ; lower cut-off = 1.344 ; chi-2 &lt; cut-off True
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="markword2line">
     Instrumental Variable
-</div><p>An instrumental variable is a third variable introduced into regression analysis that is correlated with the predictor variable, but uncorrelated with the response variable. By using this variable, it becomes possible to estimate the true causal effect that some predictor variable has on a response variable</p>
+</div><p>An instrumental variable is a third variable introduced into the regression analysis that is correlated with the predictor variable, but uncorrelated with the response variable. By using this variable, it becomes possible to estimate the true causal effect that some predictor variable has on a response variable</p>
 <p>Introduce a new variable in our example: <strong>Proximity to pharmacy</strong></p>
 <ul>
 <li>Proximity to pharmacy likely correlates with the fact that an individual take the drug</li>
